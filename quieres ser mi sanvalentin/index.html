@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Quieres ser mi San Valentín?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .btn-yes {
+            background: #ff6b81;
+            color: white;
+        }
+
+        .btn-no {
+            background: #ff4757;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .heart {
+            position: absolute;
+            width: 60px;
+            height: 54px;
+            background: red;
+            transform: rotate(-45deg);
+            top: 50%;
+            left: 50%;
+            margin: -27px 0 0 -30px;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .heart::before, .heart::after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 54px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -30px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 30px;
+            top: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(-45deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(-45deg);
+            }
+            100% {
+                transform: translateY(0) rotate(-45deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .gif-container, .gif-no-container {
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .gif-container img, .gif-no-container img {
+            width: 80%;
+            max-width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .love-message {
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .dramatic-text {
+            color: white;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            margin-top: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+
+            .heart {
+                width: 40px;
+                height: 36px;
+            }
+
+            .heart::before, .heart::after {
+                width: 40px;
+                height: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h1>¡Quieres ser mi San Valentín?</h1>
+        <div class="btn-container">
+            <button class="btn btn-yes">Sí</button>
+            <button class="btn btn-no">No</button>
+        </div>
+        <div class="gif-container" style="display: none;">
+            <img src="descarga.gif" alt="San Valentín GIF">
+        </div>
+        <div class="gif-no-container" style="display: none;">
+            <div class="gif-item">
+                <img src="descarga (1).gif" alt="GIF divertido 1">
+                <div class="dramatic-text">¿Acaso ya no me amas? 😭</div>
+            </div>
+            <div class="gif-item">
+                <img src="Cats Sad Sticker - Cats Sad - Descubre y comparte GIF.gif" alt="GIF divertido 2">
+                <div class="dramatic-text">¿Pero por qué? 😢</div>
+            </div>
+            <div class="gif-item">
+                <img src="descarga (2).gif" alt="GIF divertido 3">
+                <div class="dramatic-text">¡Qué mala onda! 😞</div>
+            </div>
+            <div class="gif-item">
+                <img src="Milk And Mocha Couple GIF - Milk And Mocha Couple Sad - Discover & Share GIFs.gif" alt="GIF divertido 4">
+                <div class="dramatic-text">Lo sabía... ¿Es porque soy feo, verdad? 😩</div>
+            </div>
+            <div class="gif-item">
+                <img src="Love You Sticker - Love You - Discover & Share GIFs.gif" alt="GIF divertido 5">
+                <div class="dramatic-text">¡No me dejes! 😓</div>
+            </div>
+        </div>
+        <div class="love-message" style="display: none;">
+            Te amo mucho mi amor ❤️
+        </div>
+    </div>
+
+    <script>
+        const background = document.querySelector('.background');
+        const btnNo = document.querySelector('.btn-no');
+        const btnYes = document.querySelector('.btn-yes');
+        const gifContainer = document.querySelector('.gif-container');
+        const gifNoContainer = document.querySelector('.gif-no-container');
+        const gifsNo = gifNoContainer.querySelectorAll('.gif-item');
+        const loveMessage = document.querySelector('.love-message');
+
+        let moveCount = 0;
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.top = Math.random() * window.innerHeight + 'px';
+            heart.style.transform = `scale(${Math.random() * 0.5 + 0.5}) rotate(-45deg)`;
+            heart.style.opacity = Math.random();
+            background.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 300);
+
+        // Definir la posición inicial del botón "No"
+        const btnNoInitialPosition = btnNo.getBoundingClientRect();
+
+        btnNo.addEventListener('mouseover', () => {
+            if (moveCount < 5) {
+                // Rango de movimiento limitado
+                const moveRange = 100; // Rango de ±100px
+                const x = Math.random() * (moveRange * 2) - moveRange + btnNoInitialPosition.left;
+                const y = Math.random() * (moveRange * 2) - moveRange + btnNoInitialPosition.top;
+
+                btnNo.style.position = 'absolute';
+                btnNo.style.left = `${x}px`;
+                btnNo.style.top = `${y}px`;
+
+                gifsNo.forEach((gif, index) => {
+                    gif.style.display = index === moveCount ? 'block' : 'none';
+                });
+
+                gifNoContainer.style.display = 'block';
+                moveCount++;
+            } else {
+                gifsNo.forEach(gif => gif.style.display = 'none');
+                btnNo.style.position = 'relative';
+            }
+        });
+
+        btnYes.addEventListener('click', () => {
+            document.querySelector('h1').innerText = '¡Sabía que dirías que sí! ❤️';
+            document.querySelector('.btn-container').style.display = 'none';
+            gifContainer.style.display = 'block';
+            gifNoContainer.style.display = 'none';  // Oculta los GIFs del "No"
+            loveMessage.style.display = 'block';  // Muestra el mensaje "Te amo mucho mi amor"
+        });
+    </script>
+</body>
+</html>
